@@ -1,0 +1,273 @@
+// css初始化
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; // border 和 padding 占用设定的宽度
+}
+
+/* 声明字体*/
+@font-face {
+    font-family: electronicFont;
+    src: url(../font/DS-DIGIT.TTF);
+}
+
+body {
+    background: url(../images/bg.jpg) no-repeat top center;
+    line-height: 1.15;
+}
+
+// 头部css
+header {
+    position: relative;
+    height: 1.25rem; //100px
+    background: url(../images/head_bg.png) no-repeat;
+    background-size: 100% 100%;
+
+    h1 {
+        text-align: center;
+        line-height: 1rem;
+        color: lightblue;
+        font-size: .475rem
+    }
+
+    .showTime {
+        position: absolute;
+        right: .375rem;
+        top: 0;
+        line-height: .9375rem;
+        color: lightblue;
+        font-size: .25rem;
+    }
+}
+
+// 页面主体内容
+.mainBox {
+    display: flex;
+    min-width: 12.8rem;
+    max-width: 24rem;
+    margin: 0 auto;
+    padding: .125rem .125rem 0 .125rem;
+
+    .column {
+        flex: 3;
+    }
+
+    // 让两边盒子宽度占3份 中间盒子占5份 
+    .column:nth-child(2) {
+        flex: 5;
+        margin: 0 .125rem .1875rem;
+    }
+
+    // 定义公共盒子面板
+    .panel {
+        position: relative;
+        height: 3.875rem;
+        border: .0125rem solid rgba(21, 112, 85, 0.17);
+        background: url(../images/line\(1\).png);
+        padding: 0 15px 40px;
+        margin-bottom: 15px;
+        background: rgba(255, 255, 255, 0.04);
+
+        // 创建一个伪元素 是个行内元素 是通过css创建的 不占用html标签 制作四个角的边框
+        &::before {
+            position: absolute;
+            top: 0;
+            left: 0;
+            content: ''; //引号里没有内容只是一个小盒子
+            width: .15rem;
+            height: .15rem;
+            border-top: .025rem solid #02a6b5;
+            border-left: .025rem solid #02a6b5;
+
+        }
+
+        &::after {
+            position: absolute;
+            top: 0;
+            right: 0;
+            content: ''; //引号里没有内容只是一个小盒子
+            width: .15rem;
+            height: .155rem;
+            border-top: .025rem solid #02a6b5;
+            border-right: .025rem solid #02a6b5;
+
+        }
+
+        .panel-footer {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+
+            //  为这个盒子添加左下角边框和右下角边框
+            &::before {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                content: ''; //引号里没有内容只是一个小盒子
+                width: .15rem;
+                height: .15rem;
+                border-bottom: .025rem solid #02a6b5;
+                border-left: .025rem solid #02a6b5;
+
+            }
+
+            &::after {
+                position: absolute;
+                bottom: 0;
+                right: 0;
+                content: ''; //引号里没有内容只是一个小盒子
+                width: .15rem;
+                height: .15rem;
+                border-bottom: .025rem solid #02a6b5;
+                border-right: .025rem solid #02a6b5;
+
+            }
+        }
+
+        h2 {
+            height: .6rem;
+            color: lightblue;
+            line-height: .6rem;
+            text-align: center;
+            font-size: .25rem;
+            font-weight: 400;
+        }
+
+        .chart {
+            height: 3rem;
+        }
+    }
+
+    // no数字模块
+    .no {
+        background: rgba(101, 132, 226, 0.1);
+        padding: .1875rem;
+
+        // 数字模块
+        .no-hd {
+            position: relative;
+            border: 1px solid rgba(25, 186, 139, 0.17);
+
+            ul {
+                display: flex;
+
+                li {
+                    flex: 1;
+                    height: 1rem;
+                    font-size: .875rem;
+                    color: #ffeb7b;
+                    list-style: none;
+                    text-align: center;
+                    font-family: electronicFont;
+                }
+            }
+
+            // 伪元素制作左上角和右下角边框
+            &::before {
+                position: absolute;
+                content: '';
+                top: 0;
+                left: 0;
+                width: .3125rem;
+                height: .1875rem;
+                border-top: .025rem solid #02a6b5;
+                border-left: .025rem solid #02a6b5;
+            }
+
+            &::after {
+                position: absolute;
+                content: '';
+                bottom: 0;
+                right: 0;
+                width: .3125rem;
+                height: .1875rem;
+                border-bottom: .025rem solid #02a6b5;
+                border-right: .025rem solid #02a6b5;
+            }
+        }
+
+        .no-bd {
+
+            ul {
+                display: flex;
+
+                li {
+                    flex: 1;
+                    height: .5rem;
+                    line-height: .5rem;
+                    text-align: center;
+                    font-size: .225rem;
+                    color: rgba(255, 255, 255, 0.7);
+                    padding-top: .125rem;
+                    list-style: none;
+                }
+            }
+        }
+    }
+
+    .map {
+        position: relative;
+        height: 10.125rem;
+
+        .map1 {
+            position: absolute;
+            width: 6.475rem;
+            height: 6.475rem;
+            top: 50%; //向下移动盒子大小的一半
+            left: 50%; //向右移动盒子的一半
+            transform: translate(-50%, -50%); //向左移动图片大小的一半，向上移动图片大小的一半
+            background: url(../images/map.png) no-repeat;
+            // 透明度
+            opacity: .8;
+            // 图片随着窗口大小缩放
+            background-size: 100% 100%;
+            animation: xzMap 15s linear infinite;
+        }
+
+        .map2 {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 8.0375rem;
+            height: 8.0375rem;
+            background: url(../images/lbx.png) no-repeat;
+            background-size: 100% 100%;
+            // 调用动画 : 名称  转360度（时间） 匀速  无限
+            animation: xzMap 10s linear infinite;
+        }
+
+        // @keyframes(关键帧) + 动画名称实现无限旋转
+        @keyframes xzMap {
+            from {
+                // 0~360度 -- 顺时针旋转
+                transform: translate(-50%, -50%) rotate(0deg);
+            }
+
+            to {
+                transform: translate(-50%, -50%) rotate(360deg);
+            }
+        }
+
+        .map3 {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 7.075rem;
+            height: 7.075rem;
+            background-image: url(../images/jt.png);
+            animation: xzMap1 15s linear infinite;
+        }
+        @keyframes xzMap1{
+            from{
+                // 0~-360度 逆时针旋转
+                transform: translate(-50%, -50%) rotate(0deg);
+            }
+            to{
+                transform: translate(-50%, -50%) rotate(-360deg);
+            }
+        }
+    }
+}

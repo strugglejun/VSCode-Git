@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="zh_C">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>数据可视化大屏</title>
+    <link rel="stylesheet" href="css/index.css">
+    <!-- 引入eCharts.js文件 -->
+    <script src="js/echarts.min.js"></script>
+    <script src="js/index.js"></script>
+    <script src="js/china.js"></script>
+    scr
+</head>
+
+<body>
+    <!-- 引入flexible屏幕适配文件 -->
+    <script src="js/flexible.js"></script>
+    <!-- 1.头部盒子 -->
+    <header>
+        <h1>前端就业岗位数据可视化分析</h1>
+        <div class="showTime"></div>
+        <script src="js/header.js"></script>
+    </header>
+    <!-- 页面主体部分 -->
+    <section class="mainBox">
+        <!-- 用flex弹性布局 -->
+        <!-- 最左侧大盒子 可分为正中下三个panel-->
+        <div class="column">
+            <div class="panel bar">
+                <h2>就业岗位</h2>
+                <!-- 柱形图模块 -->
+                <div class="chart"></div>
+                <!-- 最下面加这个盒子没有大小 主要是为了设置panel左下角边框和右下角边框 -->
+                <div class="panel-footer"></div>
+            </div>
+            <div class="panel line">
+                <h2>招聘人员变化</h2>
+                <!-- 柱形图模块 -->
+                <div class="chart"></div>
+                <!-- 最下面加这个盒子没有大小 主要是为了设置panel左下角边框和右下角边框 -->
+                <div class="panel-footer"></div>
+            </div>
+            <div class="panel pie">
+                <h2>地区分布</h2>
+                <!-- 柱形图模块 -->
+                <div class="chart"></div>
+                <!-- 最下面加这个盒子没有大小 主要是为了设置panel左下角边框和右下角边框 -->
+                <div class="panel-footer"></div>
+            </div>
+        </div>
+        <!-- 中间大盒子 -->
+        <div class="column">
+            <!-- no数字模块制作 -->
+            <div class="no">
+                <div class="no-hd">
+                    <ul>
+                        <li>16875</li>
+                        <li>14569</li>
+                    </ul>
+                </div>
+                <div class="no-bd">
+                    <ul>
+                        <li>前端需求人数</li>
+                        <li>前端供应人数</li>
+                    </ul>
+                </div>
+            </div>
+            <!-- 地图map模块制作 -->
+            <div class="map">
+                <!-- 背景球体 -->
+                <div class="map1"></div>
+                <!-- 网状旋转小球体 -->
+                <div class="map2"></div>
+                <!-- 两个箭头弧线 -->
+                <div class="map3"></div>
+                <div class="chart"></div>
+            </div>
+        </div>
+        <!-- 最右侧大盒子  可分为上中下三个panel-->
+        <div class="column">
+            <div class="panel bar1">
+                <h2>技能要求</h2>
+                <!-- 柱形图模块 -->
+                <div class="chart"></div>
+                <!-- 最下面加这个盒子没有大小 主要是为了设置panel左下角边框和右下角边框 -->
+                <div class="panel-footer"></div>
+            </div>
+            <div class="panel line1">
+                <h2>薪资变化
+                </h2>
+                <!-- 柱形图模块 -->
+                <div class="chart"></div>
+                <!-- 最下面加这个盒子没有大小 主要是为了设置panel左下角边框和右下角边框 -->
+                <div class="panel-footer"></div>
+            </div>
+            <div class="panel pie1">
+                <h2>年龄分布</h2>
+                <!-- 柱形图模块 -->
+                <div class="chart"></div>
+                <!-- 最下面加这个盒子没有大小 主要是为了设置panel左下角边框和右下角边框 -->
+                <div class="panel-footer"></div>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>

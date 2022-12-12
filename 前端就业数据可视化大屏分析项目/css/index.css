@@ -1,0 +1,220 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/* 声明字体*/
+@font-face {
+  font-family: electronicFont;
+  src: url(../font/DS-DIGIT.TTF);
+}
+body {
+  background: url(../images/bg.jpg) no-repeat top center;
+  line-height: 1.15;
+}
+header {
+  position: relative;
+  height: 1.25rem;
+  background: url(../images/head_bg.png) no-repeat;
+  background-size: 100% 100%;
+}
+header h1 {
+  text-align: center;
+  line-height: 1rem;
+  color: lightblue;
+  font-size: 0.475rem;
+}
+header .showTime {
+  position: absolute;
+  right: 0.375rem;
+  top: 0;
+  line-height: 0.9375rem;
+  color: lightblue;
+  font-size: 0.25rem;
+}
+.mainBox {
+  display: flex;
+  min-width: 12.8rem;
+  max-width: 24rem;
+  margin: 0 auto;
+  padding: 0.125rem 0.125rem 0 0.125rem;
+}
+.mainBox .column {
+  flex: 3;
+}
+.mainBox .column:nth-child(2) {
+  flex: 5;
+  margin: 0 0.125rem 0.1875rem;
+}
+.mainBox .panel {
+  position: relative;
+  height: 3.875rem;
+  border: 0.0125rem solid rgba(21, 112, 85, 0.17);
+  background: url(../images/line\(1\).png);
+  padding: 0 15px 40px;
+  margin-bottom: 15px;
+  background: rgba(255, 255, 255, 0.04);
+}
+.mainBox .panel::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: '';
+  width: 0.15rem;
+  height: 0.15rem;
+  border-top: 0.025rem solid #02a6b5;
+  border-left: 0.025rem solid #02a6b5;
+}
+.mainBox .panel::after {
+  position: absolute;
+  top: 0;
+  right: 0;
+  content: '';
+  width: 0.15rem;
+  height: 0.155rem;
+  border-top: 0.025rem solid #02a6b5;
+  border-right: 0.025rem solid #02a6b5;
+}
+.mainBox .panel .panel-footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+.mainBox .panel .panel-footer::before {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  content: '';
+  width: 0.15rem;
+  height: 0.15rem;
+  border-bottom: 0.025rem solid #02a6b5;
+  border-left: 0.025rem solid #02a6b5;
+}
+.mainBox .panel .panel-footer::after {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  content: '';
+  width: 0.15rem;
+  height: 0.15rem;
+  border-bottom: 0.025rem solid #02a6b5;
+  border-right: 0.025rem solid #02a6b5;
+}
+.mainBox .panel h2 {
+  height: 0.6rem;
+  color: lightblue;
+  line-height: 0.6rem;
+  text-align: center;
+  font-size: 0.25rem;
+  font-weight: 400;
+}
+.mainBox .panel .chart {
+  height: 3rem;
+}
+.mainBox .no {
+  background: rgba(101, 132, 226, 0.1);
+  padding: 0.1875rem;
+}
+.mainBox .no .no-hd {
+  position: relative;
+  border: 1px solid rgba(25, 186, 139, 0.17);
+}
+.mainBox .no .no-hd ul {
+  display: flex;
+}
+.mainBox .no .no-hd ul li {
+  flex: 1;
+  height: 1rem;
+  font-size: 0.875rem;
+  color: #ffeb7b;
+  list-style: none;
+  text-align: center;
+  font-family: electronicFont;
+}
+.mainBox .no .no-hd::before {
+  position: absolute;
+  content: '';
+  top: 0;
+  left: 0;
+  width: 0.3125rem;
+  height: 0.1875rem;
+  border-top: 0.025rem solid #02a6b5;
+  border-left: 0.025rem solid #02a6b5;
+}
+.mainBox .no .no-hd::after {
+  position: absolute;
+  content: '';
+  bottom: 0;
+  right: 0;
+  width: 0.3125rem;
+  height: 0.1875rem;
+  border-bottom: 0.025rem solid #02a6b5;
+  border-right: 0.025rem solid #02a6b5;
+}
+.mainBox .no .no-bd ul {
+  display: flex;
+}
+.mainBox .no .no-bd ul li {
+  flex: 1;
+  height: 0.5rem;
+  line-height: 0.5rem;
+  text-align: center;
+  font-size: 0.225rem;
+  color: rgba(255, 255, 255, 0.7);
+  padding-top: 0.125rem;
+  list-style: none;
+}
+.mainBox .map {
+  position: relative;
+  height: 10.125rem;
+}
+.mainBox .map .map1 {
+  position: absolute;
+  width: 6.475rem;
+  height: 6.475rem;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: url(../images/map.png) no-repeat;
+  opacity: 0.8;
+  background-size: 100% 100%;
+  animation: xzMap 15s linear infinite;
+}
+.mainBox .map .map2 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 8.0375rem;
+  height: 8.0375rem;
+  background: url(../images/lbx.png) no-repeat;
+  background-size: 100% 100%;
+  animation: xzMap 10s linear infinite;
+}
+@keyframes xzMap {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+.mainBox .map .map3 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 7.075rem;
+  height: 7.075rem;
+  background-image: url(../images/jt.png);
+  animation: xzMap1 15s linear infinite;
+}
+@keyframes xzMap1 {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(-360deg);
+  }
+}

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Echarts事件与行为</title>
+    <!-- 引入 echarts.js -->
+    <script src="js/echarts.js"></script>
+</head>
+<body>
+    <!-- 为ECharts准备一个具备大小（宽高）的Dom -->
+    <div id="main" style="width: 600px;height:400px;"></div>
+    <script type="text/javascript">
+        // 基于准备好的dom，初始化echarts实例
+        var myChart = echarts.init(document.getElementById('main'));
+
+        // 准备图表展示数据
+        var data_name = ["衬衫","羊毛衫","雪纺衫","裤子","高跟鞋","袜子"]
+        var data_num = [5, 20, 36, 10, 10, 20]
+
+        // 指定图表的配置项和数据
+        var option = {
+            title: {
+                text: 'ECharts事件与行为示例' // 图表标题
+            },
+            tooltip: {},
+            legend: {
+                data:['销量']       // 图例
+            },
+            xAxis: {
+                data: data_name     // x轴数据
+            },
+            yAxis: {},              // y轴默认自动
+            series: [{
+                // 柱状图
+                type: 'bar',
+                data: data_num,
+                // 显示标签数量
+                label: {
+                    normal: {
+                        show: true,
+                        position: 'top'     // 显示位置
+                    }
+                },
+                //配置样式
+                itemStyle: {
+                    //通常情况下样式
+                    normal:{
+                        //每个柱子的颜色即为colorList数组里的每一项，如果柱子数目多于colorList的长度，则柱子颜色循环使用该数组
+                        color: function (params){
+                            var colorList = ['#8dc63f','#add8e6','#ffb6c1','#f37b1d','#A6A6D2','#F0E68C'];
+                            return colorList[params.dataIndex];
+                        }
+                    },
+                    //鼠标悬停时，显示强调效果
+                    emphasis: {
+                            shadowBlur: 10,
+                            shadowOffsetX: 0,
+                            shadowColor: 'rgba(0, 0, 0, 0.5)'
+                    }
+                },
+            }],
+        };
+
+        // 使用刚指定的配置项和数据显示图表。
+        myChart.setOption(option);
+        // 处理点击事件并且跳转到相应的搜索页面
+        myChart.on('click', function(params){
+            // 跳转百度搜素
+            // window.open('https://www.baidu.com/s?wd=' + encodeURIComponent(params.name))
+            // 跳转淘宝搜索
+            window.open('https://s.taobao.com/search?q=' + encodeURIComponent(params.name))
+        })
+    </script>
+</body>
+</html>
